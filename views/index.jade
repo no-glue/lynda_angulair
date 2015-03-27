@@ -4,6 +4,4 @@ block content
   div(class="container" ng-controller="AppCtrl")
     h1 AngulAir
     ul(ng-repeat="airport in airports")
-      li {{airport.code}}
-      li {{airport.city}}
-      li {{airport.name}}
+      li {{airport.code}} - {{airport.city | uppercase}}
