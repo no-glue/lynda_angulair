@@ -4,4 +4,6 @@ block content
   div(class="container" ng-controller="AppCtrl")
     h1 AngulAir
     ul(ng-repeat="airport in airports")
-      li {{airport.code}} - {{airport.city | uppercase}}
+      li
+        a(href="" ng-click="setAirport(airport.code)") {{airport.code}} - {{airport.city | uppercase}}
+    p(ng-show="currentAirport") Current airport: {{currentAirport.name}}
