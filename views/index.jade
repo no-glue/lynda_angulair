@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p(class="cruft", id="cruft") Welcome to #{title}
+  div(class="container" ng-controller="AppCtrl")
+    h1 AngulAir
+    ul(ng-repeat="airport in airports")
+      li {{airport.code}}
+      li {{airport.city}}
+      li {{airport.name}}
