@@ -3,4 +3,11 @@ extends layout
 block content
   div(class="container" ng-controller="AppCtrl")
     h1 AngulAir
+    ul(class="nav nav-pills")
+      li(ng-class="destinationsActive")
+        a(href="#") Destinations
+      li(ng-class="flightsActive")
+        a(href="#/flights") Flights
+      li(ng-class="reservationsActive")
+        a(href="#/reservations") Reservations
     div(ng-view)

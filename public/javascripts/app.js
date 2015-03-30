@@ -1,8 +1,18 @@
-angular.module("airline", []).config(AirlineRouter);
+angular.module('airline', [])
+	.config(airlineRouter);
 
-var AirlineRouter = function($routeProvider) {
-  $routeProvider
-    .when("/", {templateUrl: "html/destinations.html"})
-    .when("/flights", {template: "<h3>Flights</h3>"})
-    .when("/reservations", {template: "<h3>Your reservations</h3>"});
-};
+function airlineRouter ($routeProvider) {
+	$routeProvider
+		.when('/', {templateUrl: 'html/destinations.html',
+		 controller: function  ($scope) {
+		 	$scope.setActive('destinations');
+		 }})
+		.when('/flights', {template: '<h3>Flights</h3>',
+		 controller: function  ($scope) {
+		 	$scope.setActive('flights');
+		 }})
+		.when('/reservations', {template: '<h3>Your Reservations</h3>',
+		 controller: function  ($scope) {
+		 	$scope.setActive('reservations');
+		 }});
+}
