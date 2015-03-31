@@ -9,6 +9,9 @@ function airlineRouter ($routeProvider) {
     .when('/airports/:airportCode', {
       templateUrl: 'html/airport.html', 
       controller: 'AirportCtrl'})
+    .when('/airports/:airport1/:airport2', {
+      templateUrl: 'html/two_airports.html',
+    })
 		.when('/flights', {
       template: '<h3>Flights</h3> {{airports | json}}',
 		 controller: 'FlightsCtrl'})
