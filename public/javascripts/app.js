@@ -3,16 +3,16 @@ angular.module('airline', [])
 
 function airlineRouter ($routeProvider) {
 	$routeProvider
-		.when('/', {templateUrl: 'html/destinations.html',
-		 controller: function  ($scope) {
-		 	$scope.setActive('destinations');
-		 }})
-		.when('/flights', {template: '<h3>Flights</h3>',
-		 controller: function  ($scope) {
-		 	$scope.setActive('flights');
-		 }})
-		.when('/reservations', {template: '<h3>Your Reservations</h3>',
-		 controller: function  ($scope) {
-		 	$scope.setActive('reservations');
-		 }});
+		.when('/', {
+      templateUrl: 'html/destinations.html',
+		 controller: 'DestinationsCtrl'})
+    .when('/airports/:airportCode', {
+      templateUrl: 'html/airport.html', 
+      controller: 'AirportCtrl'})
+		.when('/flights', {
+      template: '<h3>Flights</h3> {{airports | json}}',
+		 controller: 'FlightsCtrl'})
+		.when('/reservations', {
+      template: '<h3>Your Reservations</h3> {{airports | json}}',
+		 controller: 'ReservationsCtrl'});
 }
