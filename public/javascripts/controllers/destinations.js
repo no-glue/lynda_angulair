@@ -3,8 +3,7 @@ function DestinationsCtrl($scope, Airport) {
   $scope.sidebarPartial = 'html/airport.html';
   $scope.currentAirport = null;
   $scope.setAirport = function(code) {
-    $scope.currentAirport = $scope.airports[code];
-    console.debug($scope.currentAirport, $scope.airports, code)
+    $scope.currentAirport = Airport.get({airportCode: code});
   };
   $scope.airports = Airport.query();
 }
