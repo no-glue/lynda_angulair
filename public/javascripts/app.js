@@ -13,6 +13,6 @@ function airlineRouter ($routeProvider) {
       templateUrl: 'html/flights.html',
 		 controller: 'FlightsCtrl'})
 		.when('/reservations', {
-      template: '<h3>Your Reservations</h3> {{airports | json}}',
+      templateUrl: 'html/reservations.html',
 		 controller: 'ReservationsCtrl'});
 }
