@@ -1,4 +1,4 @@
-angular.module('airline', ['airlineServices'])
+angular.module('airline', ['airlineServices', 'airlineFilters'])
 	.config(airlineRouter);
 
 function airlineRouter ($routeProvider) {
